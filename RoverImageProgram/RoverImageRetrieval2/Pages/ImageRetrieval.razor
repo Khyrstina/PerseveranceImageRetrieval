@@ -30,7 +30,8 @@
         //var = initializes variables
         //httpRequestMessage = acts as a request-response protocol
         //httpmethod.get = the httpmethod is being told to "get"/request the information) 
-        var request = new HttpRequestMessage(HttpMethod.Get, "https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key=6TDMngLNOBW9LaJHihpPwqkrLMgQToOaD8H5Pii9&camera=MCZ_RIGHT");
+        //NAVCAM_LEFT is one of the few cameras aboard perserverance that take panoramic photos
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key=6TDMngLNOBW9LaJHihpPwqkrLMgQToOaD8H5Pii9&camera=NAVCAM_LEFT");
 
         //
         var client = _clientFactory.CreateClient();
