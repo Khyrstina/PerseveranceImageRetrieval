@@ -1,0 +1,58 @@
+﻿<!--<a href="/">This is where we name our page and </a> -->
+@page "/Image Retrieval"
+<!--<a href="/">This gives the web app the ability to make Http requests</a> -->
+<!--<a href="/">Http client is the base class for making http requests 1</a> -->
+@inject IHttpClientFactory _clientFactory
+<!--<a href="/">This is the header, it is header 3 as there can only be 1 header 1</a> -->
+
+<h3>ImageRetrieval</h3>
+<!--<a href="/"> if roverData has a value assigned</a> -->
+@if (roverData is not null)
+{
+    //Tells roverData to access latest_photos in our Model, specifically the Id variable
+    <p>@roverData.latest_photos[0].Id</p>
+    //img src represents an image and we are telling it to look in latest_photos under the img_src variable for the image
+    <img src="@roverData.latest_photos[0].img_src">
+}
+
+@code {
+
+    //the Rootobject contains the objects from our Models
+    Rootobject roverData;
+    //OnInitializedAsync = method is executed when task is initialized
+    //protected = access to this member is limited to the containing class in which it is declared or to any class derived from the containing class
+    //override = provides a new implementation of the method inherited from a base class
+    //async =  runs synchronously until it reaches its first await expression, 
+    // at which point the method is suspended until the awaited task is complete
+    protected override async Task OnInitializedAsync()
+    {
+        //This is where we are requesting the information from, aka the API
+        //var = initializes variables
+        //httpRequestMessage = acts as a request-response protocol
+        //httpmethod.get = the httpmethod is being told to "get"/request the information) 
+        var request = new HttpRequestMessage(HttpMethod.Get, "https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key=6TDMngLNOBW9LaJHihpPwqkrLMgQToOaD8H5Pii9&camera=MCZ_RIGHT");
+
+        //
+        var client = _clientFactory.CreateClient();
+        //HttpResponse = response = used to send a response to the client request from a server.
+        //await = the await that the async was waiting for earlier
+        //client.SendAsync(request) = Sends an HTTP request as an asynchronous operation
+        HttpResponseMessage response = await client.SendAsync(request);
+        //if the response comes back as a value that says the httprequest was successful
+        if (response.IsSuccessStatusCode)
+        {
+            //await = returns data from Models
+            //used to send a response to the client request from a server
+            //content = gets or sets the content of the http response message
+            //ReadFromJsonAsync = takes the http content and returns the result of deserializing(translating from a data store to readable data)
+            // the content of the Json in an asynchronous operation
+            //Rootobject = gives the format of the Models file for the program to use
+            roverData = await response.Content.ReadFromJsonAsync<Rootobject>();
+            //Seeing where this text appears for debugging
+            Console.WriteLine("This is where we are debugging");
+            Console.WriteLine(roverData);
+        }
+
+    }
+
+}
