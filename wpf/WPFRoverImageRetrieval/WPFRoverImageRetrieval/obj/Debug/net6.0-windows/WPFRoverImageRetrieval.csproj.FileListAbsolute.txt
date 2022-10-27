@@ -1,0 +1,5 @@
+C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\WPFRoverImageRetrieval.csproj.AssemblyReference.cache
+C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\Perseverance.g.cs
+C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\WPFRoverImageRetrieval_MarkupCompile.cache
+C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\WPFRoverImageRetrieval_MarkupCompile.lref
