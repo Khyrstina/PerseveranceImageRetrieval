@@ -21,7 +21,7 @@
         </Grid>
         <Button x:Name="NextImageButton" Content="Next Image" HorizontalAlignment="Left" Margin="580,0,0,0" VerticalAlignment="Top" Height="64" Width="194" Click="Next_Click"/>
         <TextBlock x:Name="roverText" HorizontalAlignment="Left" Margin="10,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="790"/>
-        <Image x:Name="RoverImage" HorizontalAlignment="Left" Height="304" Margin="10,131,0,0" VerticalAlignment="Top" Width="775" Source="/668964421963481107.png"/>
+        <Image x:Name="RoverImage" HorizontalAlignment="Left" Height="304" Margin="10,131,0,0" VerticalAlignment="Top" Width="775"/>
 
     </Grid>
 </Page>
