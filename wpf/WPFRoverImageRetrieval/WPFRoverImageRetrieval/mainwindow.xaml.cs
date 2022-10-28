@@ -25,7 +25,6 @@ namespace WPFRoverImageRetrieval
     {
         private int arrayObjectNumber = 0;
         private int currentPageNumber = 1;
-        private int minPageNumber = 1;
         private PerseveranceResultModel.Latest_Photos[] pageList;
         public Perseverance()
         {
@@ -36,7 +35,7 @@ namespace WPFRoverImageRetrieval
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-             Perseverance_Click(sender, e);
+            Next_Click(sender, e);
             pageList = await ImageLoader.CurrentPage(currentPageNumber);
         }
 
@@ -44,15 +43,6 @@ namespace WPFRoverImageRetrieval
         public async void Perseverance_Click(object sender, RoutedEventArgs e)
         {
 
-            var pageList = await ImageLoader.CurrentPage(currentPageNumber);
-
-
-            //use +newLine+ to make a new line in a TextBox
-            string newLine = Environment.NewLine;
-            roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[0].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
-
-            var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
-            RoverImage.Source = new BitmapImage(uriSource);
         }
 
 
@@ -72,11 +62,19 @@ namespace WPFRoverImageRetrieval
                 {
                     currentPageNumber -= 1;
                     pageList = await ImageLoader.CurrentPage(currentPageNumber);
-                    arrayObjectNumber = pageList.Length;
+                    arrayObjectNumber = pageList.Length - 1;
                     roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
                     var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
                     RoverImage.Source = new BitmapImage(uriSource);
                 }
+            if (currentPageNumber == 1 && arrayObjectNumber == 0)
+            {
+                PreviousImageButton.IsEnabled = false;
+            }
+            else
+            {
+                PreviousImageButton.IsEnabled = true;
+            }
         }
 
 
@@ -84,7 +82,7 @@ namespace WPFRoverImageRetrieval
 
             private async void Next_Click(object sender, RoutedEventArgs e)
             {
-           
+           pageList = await ImageLoader.CurrentPage(currentPageNumber);
             string newLine = Environment.NewLine;
             if (arrayObjectNumber < pageList.Length)
             {              
@@ -103,13 +101,13 @@ namespace WPFRoverImageRetrieval
                 var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
                 RoverImage.Source = new BitmapImage(uriSource);
             }
-            if (currentPageNumber >= 2)
+            if (currentPageNumber == 1 && arrayObjectNumber == 0)
             {
-                PreviousImageButton.IsEnabled = true;
+                PreviousImageButton.IsEnabled = false;
             }
             else
             {
-                PreviousImageButton.IsEnabled= false;
+                PreviousImageButton.IsEnabled = true;
             }
         }
       }
