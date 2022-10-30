@@ -36,6 +36,10 @@ namespace WPFRoverImageRetrieval
             PreviousImageButton.IsEnabled = false;
             aboutText.Visibility = Visibility.Hidden;
             HomeButton.Visibility = Visibility.Hidden;
+            DaysBox.Visibility = Visibility.Hidden;
+            HoursBox.Visibility = Visibility.Hidden;
+            MinutesBox.Visibility = Visibility.Hidden;
+            SecondsBox.Visibility = Visibility.Hidden;
         }
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
@@ -128,11 +132,19 @@ namespace WPFRoverImageRetrieval
             roverText.Visibility = Visibility.Collapsed;
             RoverImage.Visibility = Visibility.Collapsed;
             HomeButton.Visibility = Visibility.Visible;
+            //YearsBox.Visibility = Visibility.Visible;
+            DaysBox.Visibility = Visibility.Visible;
+            HoursBox.Visibility = Visibility.Visible;
+            MinutesBox.Visibility = Visibility.Visible;
+            SecondsBox.Visibility = Visibility.Visible;
 
             var timePassed = TimeOnMars.calculateTimeOnMars(d1, d2);
 
-            aboutText.Text = $"Perseverance has been on Mars for {timePassed.Days} days, {timePassed.Minutes} minutes, and {timePassed.Seconds} seconds.";
-
+            aboutText.Text = "Perseverance has been on Mars for:";
+            DaysBox.Text = $"{timePassed.Days} Days";
+            HoursBox.Text = $"{timePassed.Hours} Hours";
+            MinutesBox.Text = $"{timePassed.Minutes} Minutes";
+            SecondsBox.Text = $"{timePassed.Seconds} Seconds";
         }
 
         public async void Home_Click(object sender, RoutedEventArgs e)

@@ -225,12 +225,47 @@
                         TextWrapping="WrapWithOverflow"/>
                 <TextBlock x:Name="aboutText" 
                        Foreground="#04183a"
-                       FontSize="15"
+                       FontSize="50"
                        FontWeight="Medium"
-                       VerticalAlignment="Center"
+                       VerticalAlignment="Top"
                        FontFamily="Fonts/#Genos"
                        Margin="0,0,15,0"
                         TextWrapping="WrapWithOverflow"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock x:Name="DaysBox"
+                       Foreground="#04183a"
+                       FontSize="80"
+                       FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Genos"
+                       Margin="260,0,10,0"
+                        TextWrapping="NoWrap"/>
+                    <TextBlock x:Name="HoursBox"
+                       Foreground="#04183a"
+                       FontSize="80"
+                       FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Genos"
+                       Margin="260,0,10,0"
+                        TextWrapping="NoWrap"/>
+                <TextBlock x:Name="MinutesBox"
+                       Foreground="#04183a"
+                       FontSize="80"
+                       FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Genos"
+                       Margin="260,0,10,0"
+                        TextWrapping="NoWrap"/>
+                <TextBlock x:Name="SecondsBox"
+                       Foreground="#04183a"
+                       FontSize="80"
+                       FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Genos"
+                       Margin="260,0,10,10"
+                        TextWrapping="NoWrap"/>
+
             </StackPanel>
 
         </StackPanel>
