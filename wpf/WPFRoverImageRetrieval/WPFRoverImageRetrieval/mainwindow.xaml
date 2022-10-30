@@ -79,6 +79,41 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                             Margin="0,15,0,0">
+
+                    <Button x:Name="HomeButton" Content="View Images" Click="Home_Click"
+                            Foreground="White"
+                            FontSize="14"
+                            FontWeight="Medium"
+                            Margin="0,0,10,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="TextElement.FontFamily" Value="Fonts/#Genos"/>
+                                <Setter Property="Background" Value="#fc3d21"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#701002"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="100" Height="25"
+                                        CornerRadius="12"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    
                     <Button Content="About Rover" Click="Perseverance_Click" 
                             Foreground="White"
                             FontSize="14"
@@ -188,7 +223,15 @@
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"
-                       Margin="0,0,10,0"
+                       Margin="0,0,15,0"
+                        TextWrapping="WrapWithOverflow"/>
+                <TextBlock x:Name="aboutText" 
+                       Foreground="#04183a"
+                       FontSize="15"
+                       FontWeight="Medium"
+                       VerticalAlignment="Center"
+                       FontFamily="Fonts/#Genos"
+                       Margin="0,0,15,0"
                         TextWrapping="WrapWithOverflow"/>
             </StackPanel>
 

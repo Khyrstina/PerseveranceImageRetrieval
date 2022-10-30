@@ -11,4 +11,14 @@
     <ProjectReference Include="..\ThisisaLibrary\ThisisaLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Fonts\Genos.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
