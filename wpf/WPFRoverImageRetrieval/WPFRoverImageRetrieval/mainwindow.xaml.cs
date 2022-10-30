@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Interop;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Input.Manipulations;
 
 namespace WPFRoverImageRetrieval
 {
@@ -27,6 +28,7 @@ namespace WPFRoverImageRetrieval
         private int arrayObjectNumber = 0;
         private int currentPageNumber = 1;
         private PerseveranceResultModel.Latest_Photos[] pageList;
+
         public Perseverance()
         {
             InitializeComponent();
@@ -118,7 +120,8 @@ namespace WPFRoverImageRetrieval
                 PreviousImageButton.IsEnabled = true;
             }
         }
-
+        public System.DateTime d1 = new System.DateTime(2021, 02, 18, 20, 55, 0);
+        public System.DateTime d2 = System.DateTime.UtcNow;
         public async void Perseverance_Click(object sender, RoutedEventArgs e)
         {
             aboutText.Visibility = Visibility.Visible;
@@ -126,8 +129,9 @@ namespace WPFRoverImageRetrieval
             RoverImage.Visibility = Visibility.Collapsed;
             HomeButton.Visibility = Visibility.Visible;
 
+            var timePassed = TimeOnMars.calculateTimeOnMars(d1, d2);
 
-            aboutText.Text = $"Perseverance has been on Mars for ";
+            aboutText.Text = $"Perseverance has been on Mars for {timePassed.Days} days, {timePassed.Minutes} minutes, and {timePassed.Seconds} seconds.";
 
         }
 
