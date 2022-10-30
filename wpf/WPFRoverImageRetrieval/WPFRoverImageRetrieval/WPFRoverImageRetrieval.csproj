@@ -8,17 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ThisisaLibrary\ThisisaLibrary.csproj" />
+    <None Remove="Fonts\Genos.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fonts\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Fonts\Genos.ttf">
+    <Content Include="Fonts\Genos.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThisisaLibrary\ThisisaLibrary.csproj" />
   </ItemGroup>
 
 </Project>

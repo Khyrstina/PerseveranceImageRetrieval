@@ -9,11 +9,12 @@
       WindowStyle= "None"
       ResizeMode =" NoResize"
         Background="DimGray"
-      Title="Perseverance" Height="500" Width="900">
+      Title="Perseverance" Height="500" Width="900" FontFamily="Fonts/#Genos">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition/>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="369*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -33,7 +34,6 @@
 
         <TextBlock Text ="Perseverance Image Loader"
                    Foreground="White"
-                   Grid.Column="1"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontFamily="Fonts/#Genos"
@@ -44,11 +44,9 @@
                             Foreground="White"
                             FontSize="14"
                             FontWeight="Medium"
-                            Margin="0,0,10,0"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Grid.Column="4"
-                            Grid.ColumnSpan="2">
+                            Margin="790,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center">
 
             <Button.Style>
                 <Style TargetType="Button">
@@ -75,7 +73,7 @@
             </Button.Template>
         </Button>
 
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1" Grid.RowSpan="2">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                             Margin="0,15,0,0">
@@ -113,7 +111,7 @@
                         </Button.Template>
                     </Button>
 
-                    
+
                     <Button Content="About Rover" Click="Perseverance_Click" 
                             Foreground="White"
                             FontSize="14"
@@ -219,7 +217,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock x:Name="roverText" 
                        Foreground="#04183a"
-                       FontSize="15"
+                       FontSize="18"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"

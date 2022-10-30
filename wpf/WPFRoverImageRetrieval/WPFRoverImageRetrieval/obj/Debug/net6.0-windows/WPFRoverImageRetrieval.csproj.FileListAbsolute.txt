@@ -57,3 +57,4 @@ C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\WPFRoverImageRetr
 C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\WPFRoverImageRetrieval.genruntimeconfig.cache
 C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\ref\WPFRoverImageRetrieval.dll
 C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\bin\Debug\net6.0-windows\Fonts\Genos.ttf
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\WPFRoverImageRetrieval\obj\Debug\net6.0-windows\WPFRoverImageRetrieval_Content.g.cs
