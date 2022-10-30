@@ -112,7 +112,7 @@
                     </Button>
 
 
-                    <Button Content="About Rover" Click="Perseverance_Click" 
+                    <Button x:Name="PerseveranceButton" Content="About Rover" Click="Perseverance_Click" 
                             Foreground="White"
                             FontSize="14"
                             FontWeight="Medium"

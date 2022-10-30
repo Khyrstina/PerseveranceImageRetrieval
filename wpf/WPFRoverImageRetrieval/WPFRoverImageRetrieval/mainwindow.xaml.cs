@@ -17,6 +17,10 @@ using System.Windows.Interop;
 using System.Diagnostics;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input.Manipulations;
+using System.Windows.Threading;
+using System.ComponentModel;
+using System.Threading;
+using System.Windows.Controls.Primitives;
 
 namespace WPFRoverImageRetrieval
 {
@@ -132,7 +136,6 @@ namespace WPFRoverImageRetrieval
             roverText.Visibility = Visibility.Collapsed;
             RoverImage.Visibility = Visibility.Collapsed;
             HomeButton.Visibility = Visibility.Visible;
-            //YearsBox.Visibility = Visibility.Visible;
             DaysBox.Visibility = Visibility.Visible;
             HoursBox.Visibility = Visibility.Visible;
             MinutesBox.Visibility = Visibility.Visible;
@@ -145,8 +148,19 @@ namespace WPFRoverImageRetrieval
             HoursBox.Text = $"{timePassed.Hours} Hours";
             MinutesBox.Text = $"{timePassed.Minutes} Minutes";
             SecondsBox.Text = $"{timePassed.Seconds} Seconds";
-        }
 
+
+            DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = new TimeSpan(0, 1, 0);
+            dispatcherTimer.Start();
+
+            void dispatcherTimer_Tick(object sender, EventArgs e)
+            {
+                PerseveranceButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
+
+            }
+        }
         public async void Home_Click(object sender, RoutedEventArgs e)
         {
             string newLine = Environment.NewLine;
@@ -154,7 +168,7 @@ namespace WPFRoverImageRetrieval
             roverText.Visibility = Visibility.Visible;
             RoverImage.Visibility= Visibility.Visible;
             HomeButton.Visibility = Visibility.Hidden;
-
+            
             pageList = await ImageLoader.CurrentPage(currentPageNumber);
             roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
             var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
