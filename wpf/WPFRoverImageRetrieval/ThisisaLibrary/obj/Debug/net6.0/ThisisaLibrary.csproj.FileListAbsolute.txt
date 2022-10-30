@@ -10,3 +10,15 @@ C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\ne
 C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\refint\ThisisaLibrary.dll
 C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.pdb
 C:\Users\Khyrstie\Desktop\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ref\ThisisaLibrary.dll
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\bin\Debug\net6.0\ThisisaLibrary.deps.json
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\bin\Debug\net6.0\ThisisaLibrary.dll
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\bin\Debug\net6.0\ThisisaLibrary.pdb
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.csproj.AssemblyReference.cache
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.AssemblyInfoInputs.cache
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.AssemblyInfo.cs
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.dll
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\refint\ThisisaLibrary.dll
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.pdb
+C:\Users\Indigo\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ref\ThisisaLibrary.dll

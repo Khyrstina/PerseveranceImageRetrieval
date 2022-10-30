@@ -21,7 +21,7 @@ namespace WPFRoverImageRetrieval
     /// <summary>
     /// Interaction logic for Perseverance.xaml
     /// </summary>
-    public partial class Perseverance : Page
+    public partial class Perseverance : Window
     {
         private int arrayObjectNumber = 0;
         private int currentPageNumber = 1;
@@ -39,6 +39,18 @@ namespace WPFRoverImageRetrieval
             pageList = await ImageLoader.CurrentPage(currentPageNumber);
         }
 
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        public async void Exit_Click(object sender, RoutedEventArgs e)
+        {
+        Application.Current.Shutdown();
+        }
 
         public async void Perseverance_Click(object sender, RoutedEventArgs e)
         {
