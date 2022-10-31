@@ -11,10 +11,10 @@ namespace ThisisaLibrary
 
         public class Photos_List
         {
-            public Latest_Photos[] latest_photos { get; set; }
+            public Photos[] photos { get; set; }
         }
 
-        public class Latest_Photos
+        public class Photos
         {
             public int id { get; set; }
             public int sol { get; set; }

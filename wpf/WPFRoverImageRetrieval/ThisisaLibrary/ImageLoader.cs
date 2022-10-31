@@ -9,12 +9,14 @@ using System.Net.Http;
 
 namespace ThisisaLibrary
 {
-    public class ImageLoader
+    public class ImageLoader : DaysToSols
 
     {
-        public static async Task<PerseveranceResultModel.Latest_Photos[]> CurrentPage(int pageNumber = 1)
+
+        public static async Task<PerseveranceResultModel.Photos[]> CurrentSol(int solNumber = 1)
         {
-            string url = $"https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key=6TDMngLNOBW9LaJHihpPwqkrLMgQToOaD8H5Pii9&page={pageNumber}/info.0.json";
+
+            string url = $"https://mars-photos.herokuapp.com/api/v1/rovers/Perseverance/photos?sol={solNumber}/info.0.json";
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
@@ -22,7 +24,7 @@ namespace ThisisaLibrary
                 {
                     PerseveranceResultModel.Photos_List result = await response.Content.ReadAsAsync<PerseveranceResultModel.Photos_List>();
                    
-                    return result.latest_photos; 
+                    return result.photos; 
                 }
                 else
                 {
