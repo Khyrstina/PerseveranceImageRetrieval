@@ -4772,23 +4772,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Indigo\\.nuget\\packages\\": {},
+    "C:\\Users\\Khyrstie\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Indigo\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
+      "projectUniqueName": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
       "projectName": "WPFRoverImageRetrieval",
-      "projectPath": "C:\\Users\\Indigo\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
-      "packagesPath": "C:\\Users\\Indigo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Indigo\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\obj\\",
+      "projectPath": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
+      "packagesPath": "C:\\Users\\Khyrstie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Indigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Khyrstie\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4804,8 +4804,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Indigo\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj": {
-              "projectPath": "C:\\Users\\Indigo\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj"
+            "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj": {
+              "projectPath": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj"
             }
           }
         }
@@ -4838,7 +4838,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -12,7 +12,7 @@
       Title="Perseverance" Height="500" Width="900" FontFamily="Fonts/#Genos">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="101*"/>
             <RowDefinition Height="369*"/>
         </Grid.RowDefinitions>
@@ -31,18 +31,48 @@
 
             </Grid.ColumnDefinitions>
         </Grid>
+        <Button x:Name="ReferenceButton" Content="References" Click="Reference_Click"
+                Foreground="White"
+                FontSize="18"
+                Margin="25,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/#Genos"/>
+                    <Setter Property="Background" Value="#643B9F"/>
+                    <Setter Property="Cursor" Value="Hand"/>
 
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#281840"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="100" Height="25"
+                                        CornerRadius="8"
+                                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                                        HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <TextBlock Text ="Perseverance Image Loader"
                    Foreground="White"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontFamily="Fonts/#Genos"
                    FontWeight="Medium"
-                   FontSize="25"
+                   FontSize="30"
                    />
+
         <Button x:Name="CloseProgram" Content="X" Click="Exit_Click" 
                             Foreground="White"
-                            FontSize="14"
+                            FontSize="25"
                             FontWeight="Medium"
                             Margin="790,0,0,0"
                             HorizontalAlignment="Left"
@@ -78,7 +108,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
                             Margin="0,15,0,0">
 
-                    <Button x:Name="HomeButton" Content="View Images" Click="Home_Click"
+                    <Button x:Name="HomeButton" Content="Back to Images" Click="Home_Click"
                             Foreground="White"
                             FontSize="14"
                             FontWeight="Medium"
@@ -212,7 +242,8 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Image x:Name="RoverImage" Height="304"  Width="775"
-                   HorizontalAlignment="Right"/>
+                   HorizontalAlignment="Right"
+                    Margin="0,20,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock x:Name="roverText" 
@@ -221,7 +252,7 @@
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"
-                       Margin="0,0,15,0"
+                       Margin="0,15,15,0"
                         TextWrapping="WrapWithOverflow"/>
                 <TextBlock x:Name="aboutText" 
                        Foreground="#04183a"
@@ -231,11 +262,20 @@
                        FontFamily="Fonts/#Genos"
                        Margin="0,0,15,0"
                         TextWrapping="WrapWithOverflow"/>
+                <TextBlock x:Name="referencesText" 
+                       Foreground="#04183a"
+                       FontSize="25"
+                       FontWeight="Medium"
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Genos"
+                       Margin="0,20,15,0"
+                        TextWrapping="Wrap" TextAlignment="Center"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <TextBlock x:Name="DaysBox"
                        Foreground="#04183a"
-                       FontSize="80"
+                       FontSize="70"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"
@@ -243,7 +283,7 @@
                         TextWrapping="NoWrap"/>
                     <TextBlock x:Name="HoursBox"
                        Foreground="#04183a"
-                       FontSize="80"
+                       FontSize="70"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"
@@ -251,7 +291,7 @@
                         TextWrapping="NoWrap"/>
                 <TextBlock x:Name="MinutesBox"
                        Foreground="#04183a"
-                       FontSize="80"
+                       FontSize="70"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"
@@ -259,11 +299,11 @@
                         TextWrapping="NoWrap"/>
                 <TextBlock x:Name="SecondsBox"
                        Foreground="#04183a"
-                       FontSize="80"
+                       FontSize="70"
                        FontWeight="Medium"
                        VerticalAlignment="Center"
                        FontFamily="Fonts/#Genos"
-                       Margin="260,0,10,10"
+                       Margin="260,0,10,20"
                         TextWrapping="NoWrap"/>
 
             </StackPanel>

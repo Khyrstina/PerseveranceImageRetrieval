@@ -24,9 +24,7 @@ using System.Windows.Controls.Primitives;
 
 namespace WPFRoverImageRetrieval
 {
-    /// <summary>
-    /// Interaction logic for Perseverance.xaml
-    /// </summary>
+
     public partial class Perseverance : Window
     {
         private int arrayObjectNumber = 0;
@@ -39,7 +37,7 @@ namespace WPFRoverImageRetrieval
             ApiHelper.InitializeClient();
             PreviousImageButton.IsEnabled = false;
             aboutText.Visibility = Visibility.Hidden;
-            HomeButton.Visibility = Visibility.Hidden;
+            HomeButton.Visibility = Visibility.Collapsed;
             DaysBox.Visibility = Visibility.Hidden;
             HoursBox.Visibility = Visibility.Hidden;
             MinutesBox.Visibility = Visibility.Hidden;
@@ -100,6 +98,7 @@ namespace WPFRoverImageRetrieval
 
         private async void Next_Click(object sender, RoutedEventArgs e)
         {
+            referencesText.Visibility = Visibility.Collapsed;
             pageList = await ImageLoader.CurrentPage(currentPageNumber);
             string newLine = Environment.NewLine;
             if (arrayObjectNumber < pageList.Length)
@@ -140,6 +139,9 @@ namespace WPFRoverImageRetrieval
             HoursBox.Visibility = Visibility.Visible;
             MinutesBox.Visibility = Visibility.Visible;
             SecondsBox.Visibility = Visibility.Visible;
+            referencesText.Visibility = Visibility.Collapsed;
+            NextImageButton.Visibility = Visibility.Collapsed;
+            PreviousImageButton.Visibility= Visibility.Collapsed;
 
             var timePassed = TimeOnMars.calculateTimeOnMars(d1, d2);
 
@@ -149,17 +151,6 @@ namespace WPFRoverImageRetrieval
             MinutesBox.Text = $"{timePassed.Minutes} Minutes";
             SecondsBox.Text = $"{timePassed.Seconds} Seconds";
 
-
-            DispatcherTimer dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 1, 0);
-            dispatcherTimer.Start();
-
-            void dispatcherTimer_Tick(object sender, EventArgs e)
-            {
-                PerseveranceButton.RaiseEvent(new RoutedEventArgs(ButtonBase.ClickEvent));
-
-            }
         }
         public async void Home_Click(object sender, RoutedEventArgs e)
         {
@@ -167,12 +158,38 @@ namespace WPFRoverImageRetrieval
             aboutText.Visibility= Visibility.Collapsed;
             roverText.Visibility = Visibility.Visible;
             RoverImage.Visibility= Visibility.Visible;
-            HomeButton.Visibility = Visibility.Hidden;
-            
+            HomeButton.Visibility = Visibility.Collapsed;
+            DaysBox.Visibility = Visibility.Hidden;
+            referencesText.Visibility = Visibility.Collapsed;
+            PreviousImageButton.Visibility = Visibility.Visible;
+            NextImageButton.Visibility = Visibility.Visible;
+            roverText.Visibility = Visibility.Visible;
+
             pageList = await ImageLoader.CurrentPage(currentPageNumber);
             roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
             var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
             RoverImage.Source = new BitmapImage(uriSource);
+
+        }
+        public async void Reference_Click(object sender, RoutedEventArgs e)
+        {
+            string newLine = Environment.NewLine;
+            RoverImage.Visibility= Visibility.Collapsed;
+            aboutText.Visibility = Visibility.Collapsed;
+            roverText.Visibility = Visibility.Collapsed;
+            HomeButton.Visibility = Visibility.Visible;
+            referencesText.Visibility = Visibility.Visible;
+            DaysBox.Visibility = Visibility.Collapsed;
+            HoursBox.Visibility = Visibility.Collapsed;
+            MinutesBox.Visibility = Visibility.Collapsed;
+            SecondsBox.Visibility = Visibility.Collapsed;
+            PreviousImageButton.Visibility = Visibility.Collapsed;
+            NextImageButton.Visibility = Visibility.Collapsed;
+
+            referencesText.Text = "To get your own key for this NASA API or others you can visit their website here:" +newLine + "https://api.nasa.gov/" + newLine + "    "
+                + newLine + "This API is maintained by Chris Cerami, you can find more information here:" +newLine + "https://github.com/chrisccerami/mars-photo-api" +newLine + "    "
+                + newLine + "The font used in this application can be found here:" + newLine + "https://fonts.google.com/specimen/Genos" + newLine + "    "
+                + newLine+ "You can find more things I've worked on Here:" + newLine + "https://github.com/Khyrstina"; 
 
         }
 
