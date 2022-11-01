@@ -79,7 +79,7 @@ namespace WPFRoverImageRetrieval
                 RoverImage.Source = new BitmapImage(uriSource);
                 arrayObjectNumber -= 1;
             }
-            else if (arrayObjectNumber == 0 && currentSolNumber ==sol) 
+            else if (arrayObjectNumber == 0 && currentSolNumber <=sol) 
             {
                 currentSolNumber += 1;
                 pageList = await ImageLoader.CurrentSol(currentSolNumber);
