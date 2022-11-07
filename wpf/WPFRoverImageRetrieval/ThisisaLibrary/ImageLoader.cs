@@ -1,13 +1,4 @@
-﻿using System;
-using System.Web;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
-using System.Net.Http;
-
-namespace ThisisaLibrary
+﻿namespace ThisisaLibrary
 {
     public class ImageLoader : DaysToSols
 

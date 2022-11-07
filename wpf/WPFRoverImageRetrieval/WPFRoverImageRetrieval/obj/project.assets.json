@@ -4778,11 +4778,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
+      "projectUniqueName": "C:\\Users\\Khyrstie\\Desktop\\NASA\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
       "projectName": "WPFRoverImageRetrieval",
-      "projectPath": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
+      "projectPath": "C:\\Users\\Khyrstie\\Desktop\\NASA\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval.csproj",
       "packagesPath": "C:\\Users\\Khyrstie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\obj\\",
+      "outputPath": "C:\\Users\\Khyrstie\\Desktop\\NASA\\wpf\\WPFRoverImageRetrieval\\WPFRoverImageRetrieval\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4804,8 +4804,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj": {
-              "projectPath": "C:\\Users\\Khyrstie\\Desktop\\SoftwareDev\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj"
+            "C:\\Users\\Khyrstie\\Desktop\\NASA\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj": {
+              "projectPath": "C:\\Users\\Khyrstie\\Desktop\\NASA\\wpf\\WPFRoverImageRetrieval\\ThisisaLibrary\\ThisisaLibrary.csproj"
             }
           }
         }

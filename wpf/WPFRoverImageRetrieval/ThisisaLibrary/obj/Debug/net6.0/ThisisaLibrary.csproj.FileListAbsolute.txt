@@ -34,3 +34,15 @@ C:\Users\Khyrstie\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\
 C:\Users\Khyrstie\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\refint\ThisisaLibrary.dll
 C:\Users\Khyrstie\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.pdb
 C:\Users\Khyrstie\Desktop\SoftwareDev\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ref\ThisisaLibrary.dll
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\bin\Debug\net6.0\ThisisaLibrary.deps.json
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\bin\Debug\net6.0\ThisisaLibrary.dll
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\bin\Debug\net6.0\ThisisaLibrary.pdb
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.csproj.AssemblyReference.cache
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.AssemblyInfoInputs.cache
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.AssemblyInfo.cs
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.dll
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\refint\ThisisaLibrary.dll
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ThisisaLibrary.pdb
+C:\Users\Khyrstie\Desktop\NASA\wpf\WPFRoverImageRetrieval\ThisisaLibrary\obj\Debug\net6.0\ref\ThisisaLibrary.dll

@@ -1,26 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using ThisisaLibrary;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Interop;
-using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Input.Manipulations;
-using System.Windows.Threading;
-using System.ComponentModel;
-using System.Threading;
-using System.Windows.Controls.Primitives;
+using ThisisaLibrary;
 
 namespace WPFRoverImageRetrieval
 {
@@ -34,6 +16,7 @@ namespace WPFRoverImageRetrieval
         private int arrayObjectNumber = 0;
         private PerseveranceResultModel.Photos[] pageList;
         private int currentSolNumber = sol;
+        private const int maxImagesPerSol = 20;
 
         public Perseverance()
         {
@@ -70,23 +53,28 @@ namespace WPFRoverImageRetrieval
         
         private async void Previous_Click(object sender, RoutedEventArgs e)
         {
+            pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
-            if (arrayObjectNumber >= 1)
+            if (arrayObjectNumber >= 1 && pageList.Length > 0)
             {
-                //PreviousImageButton.IsEnabled = true;
                 roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
                 var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
                 RoverImage.Source = new BitmapImage(uriSource);
                 arrayObjectNumber -= 1;
             }
-            else if (arrayObjectNumber == 0 && currentSolNumber <=sol) 
+            else 
             {
                 currentSolNumber += 1;
                 pageList = await ImageLoader.CurrentSol(currentSolNumber);
-                arrayObjectNumber = 10;
-                roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
-                var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
-                RoverImage.Source = new BitmapImage(uriSource);
+
+                if (pageList.Length > 0)
+                {
+                    // Checks if pageList is less than 20, if less than 20 the length is that length, if it is longer then the length is 20 
+                    arrayObjectNumber = pageList.Length < maxImagesPerSol ? pageList.Length : maxImagesPerSol;
+                    roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
+                    var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
+                    RoverImage.Source = new BitmapImage(uriSource);
+                }
             }
             if (currentSolNumber == sol && arrayObjectNumber == 0)
             {
@@ -105,7 +93,7 @@ namespace WPFRoverImageRetrieval
             referencesText.Visibility = Visibility.Collapsed;
             pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
-            if (arrayObjectNumber <= 9)
+            if (arrayObjectNumber < maxImagesPerSol && pageList.Length > 0)
             {
                 roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
                 var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
@@ -117,10 +105,10 @@ namespace WPFRoverImageRetrieval
             {
                 arrayObjectNumber = 0;
                 currentSolNumber -= 1;
-                pageList = await ImageLoader.CurrentSol(currentSolNumber);
-                roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
-                var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
-                RoverImage.Source = new BitmapImage(uriSource);
+                //pageList = await ImageLoader.CurrentSol(currentSolNumber);
+                //roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
+                //var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
+                //RoverImage.Source = new BitmapImage(uriSource);
             }
             if (currentSolNumber == sol && arrayObjectNumber == 0)
             {

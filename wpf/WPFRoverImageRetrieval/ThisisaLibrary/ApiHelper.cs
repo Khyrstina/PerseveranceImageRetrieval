@@ -15,7 +15,7 @@ namespace ThisisaLibrary
         public static void InitializeClient()
             {
             ApiClient = new HttpClient();
-            ApiClient.BaseAddress = new Uri("https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/photos?api_key=6TDMngLNOBW9LaJHihpPwqkrLMgQToOaD8H5Pii9&page=1");
+            ApiClient.BaseAddress = new Uri("https://mars-photos.herokuapp.com/api/v1/rovers/Perseverance/photos?sol=1");
             ApiClient.DefaultRequestHeaders.Accept.Clear();
             ApiClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
