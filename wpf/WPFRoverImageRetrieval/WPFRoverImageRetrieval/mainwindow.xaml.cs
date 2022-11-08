@@ -105,10 +105,7 @@ namespace WPFRoverImageRetrieval
             {
                 arrayObjectNumber = 0;
                 currentSolNumber -= 1;
-                //pageList = await ImageLoader.CurrentSol(currentSolNumber);
-                //roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
-                //var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
-                //RoverImage.Source = new BitmapImage(uriSource);
+
             }
             if (currentSolNumber == sol && arrayObjectNumber == 0)
             {

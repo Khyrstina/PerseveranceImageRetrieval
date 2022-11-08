@@ -165,7 +165,7 @@ namespace WPFRoverImageRetrieval {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFRoverImageRetrieval;component/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPFRoverImageRetrieval;V1.0.0.0;component/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\mainwindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
