@@ -131,7 +131,9 @@ namespace WPFRoverImageRetrieval
             NextImageButton.Visibility = Visibility.Collapsed;
             PreviousImageButton.Visibility= Visibility.Collapsed;
 
-            var timePassed = TimeOnMars.calculateTimeOnMars(d1, d2);
+        System.DateTime d2 = System.DateTime.UtcNow;
+
+        var timePassed = TimeOnMars.calculateTimeOnMars(d1, d2);
 
             aboutText.Text = "Perseverance has been on Mars for:";
             DaysBox.Text = $"{timePassed.Days} Days";
