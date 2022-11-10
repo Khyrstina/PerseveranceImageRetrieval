@@ -56,6 +56,16 @@ namespace WPFRoverImageRetrieval
             pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
             arrayObjectNumber -= 1;
+
+            if (currentSolNumber == sol && arrayObjectNumber == 0)
+            {
+                PreviousImageButton.IsEnabled = false;
+            }
+            else
+            {
+                PreviousImageButton.IsEnabled = true;
+            }
+
             if (arrayObjectNumber >= 1 && pageList.Length > 0)
             {
                 roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
@@ -76,14 +86,7 @@ namespace WPFRoverImageRetrieval
                     RoverImage.Source = new BitmapImage(uriSource);
                 }
             }
-            if (currentSolNumber == sol && arrayObjectNumber == 0)
-            {
-                PreviousImageButton.IsEnabled = false;
-            }
-            else
-            {
-                PreviousImageButton.IsEnabled = true;
-            }
+
         }
 
 
