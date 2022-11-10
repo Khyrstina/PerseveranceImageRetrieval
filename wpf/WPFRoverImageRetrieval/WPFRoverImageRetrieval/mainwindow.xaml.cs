@@ -55,12 +55,13 @@ namespace WPFRoverImageRetrieval
         {
             pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
+            arrayObjectNumber -= 1;
             if (arrayObjectNumber >= 1 && pageList.Length > 0)
             {
                 roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
                 var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
                 RoverImage.Source = new BitmapImage(uriSource);
-                arrayObjectNumber -= 1;
+                //arrayObjectNumber -= 1;
             }
             else 
             {
@@ -68,7 +69,7 @@ namespace WPFRoverImageRetrieval
                 pageList = await ImageLoader.CurrentSol(currentSolNumber);
 
                 if (pageList.Length > 0)
-                {
+                 {
                     // Checks if pageList is less than 20, if less than 20 the length is that length, if it is longer then the length is 20 
                     arrayObjectNumber = pageList.Length < maxImagesPerSol ? pageList.Length : maxImagesPerSol;
                     roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
@@ -93,12 +94,15 @@ namespace WPFRoverImageRetrieval
             referencesText.Visibility = Visibility.Collapsed;
             pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
+
+            arrayObjectNumber += 1;
+
             if (arrayObjectNumber < maxImagesPerSol && pageList.Length > 0)
             {
                 roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
                 var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
                 RoverImage.Source = new BitmapImage(uriSource);
-                arrayObjectNumber += 1;
+ //               arrayObjectNumber += 1;
             }
 
             else
