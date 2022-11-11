@@ -55,6 +55,7 @@ namespace WPFRoverImageRetrieval
         {
             pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
+
             arrayObjectNumber -= 1;
 
             if (currentSolNumber == sol && arrayObjectNumber == 0)
@@ -66,12 +67,21 @@ namespace WPFRoverImageRetrieval
                 PreviousImageButton.IsEnabled = true;
             }
 
-            if (arrayObjectNumber >= 1 && pageList.Length > 0)
+
+
+            if (currentSolNumber > sol || arrayObjectNumber < 0)
+            {
+                currentSolNumber = sol;
+                arrayObjectNumber = 1;
+                PreviousImageButton.IsEnabled = false;
+            }
+          else  if (arrayObjectNumber >= 1 && pageList.Length > 0)
             {
                 roverText.Text = $"Image {pageList[arrayObjectNumber].id} was taken by {pageList[arrayObjectNumber].rover.name} on the Earth date {pageList[arrayObjectNumber].earth_date} and Martian sol: {pageList[arrayObjectNumber].sol} for this rover." + newLine + $"This rover is currently {pageList[arrayObjectNumber].rover.status}.";
                 var uriSource = new Uri(pageList[arrayObjectNumber].img_src, UriKind.Absolute);
                 RoverImage.Source = new BitmapImage(uriSource);
             }
+
             else 
             {
                 currentSolNumber += 1;
@@ -97,7 +107,7 @@ namespace WPFRoverImageRetrieval
             pageList = await ImageLoader.CurrentSol(currentSolNumber);
             string newLine = Environment.NewLine;
 
-            arrayObjectNumber += 1;
+            arrayObjectNumber += 1; 
 
             if (arrayObjectNumber < maxImagesPerSol && pageList.Length > 0)
             {
@@ -186,7 +196,7 @@ namespace WPFRoverImageRetrieval
                 + newLine + "This API is maintained by Chris Cerami, you can find more information here:" +newLine + "https://github.com/chrisccerami/mars-photo-api" +newLine + "    "
                 + newLine + "The font used in this application can be found here:" + newLine + "https://fonts.google.com/specimen/Genos" + newLine + "    "
                 + newLine+ "You can find more things I've worked on Here:" + newLine + "https://github.com/Khyrstina"; 
-
+            
         }
 
     }
